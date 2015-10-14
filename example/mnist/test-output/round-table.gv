@@ -1,0 +1,19 @@
+digraph plot {
+	data [label=data fillcolor="#8dd3c7" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	fc1 [label="FullyConnected
+128" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	act1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	fc4 [label="FullyConnected
+10" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	mlp1 [label=Softmax fillcolor="#b3de69" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	fc3 [label="FullyConnected
+10" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	mlp [label=Softmax fillcolor="#b3de69" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+		fc1 -> data [label=784 arrowtail=open dir=back]
+		act1 -> fc1 [label=128 arrowtail=open dir=back]
+		fc4 -> act1 [label=128 arrowtail=open dir=back]
+		mlp1 -> fc4 [label=10 arrowtail=open dir=back]
+		fc3 -> act1 [label=128 arrowtail=open dir=back]
+		mlp -> fc3 [label=10 arrowtail=open dir=back]
+}

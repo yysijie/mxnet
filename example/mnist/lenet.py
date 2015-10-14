@@ -31,7 +31,7 @@ train, val = mnist_iterator(batch_size=100, input_shape=(1,28,28))
 ## train
 logging.basicConfig(level=logging.DEBUG)
 # dev = [mx.gpu(i) for i in range(2)]
-dev = mx.gpu()
+dev = mx.cpu()
 model = mx.model.FeedForward(
     ctx = dev, symbol = lenet, num_round = 20,
     learning_rate = 0.05, momentum = 0.9, wd = 0.00001)
